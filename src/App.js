@@ -12,23 +12,23 @@ function App() {
   }
 
   const changehandler = () => {
-    if (userdetails.firstname.indexOf(" ") > 0) {
+    if (userdetails.firstname.indexOf(" ") > 0 || userdetails.firstname.length == 0) {
       alert("Enter valid first name!");
       return;
     }
-    else if (userdetails.lastname.indexOf(" ") > 0) {
+    else if (userdetails.lastname.indexOf(" ") > 0 || userdetails.lastname.length == 0) {
       alert("Enter valid last name!");
     }
-    else if (! /[^0-9a-zA-Z]/.test((userdetails.username))) {
+    else if (! /[^0-9a-zA-Z]/.test((userdetails.username)) || userdetails.username.length == 0) {
       alert("Enter valid username!");
     }
-    else if (!  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(userdetails.email)) {
+    else if (!  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(userdetails.email) || userdetails.email.length == 0) {
       alert("Enter valid email!");
     }
-    else if (!(userdetails.contact.match('[0-9]{10}'))) {
+    else if (!(userdetails.contact.match('[0-9]{10}')) || userdetails.contact.length != 10) {
       alert("Enter valid contact!");
     }
-    else if (!userdetails.postalcode.length == 6 && typeof (userdetails.postalcode) == number) {
+    else if (userdetails.postalcode.length != 6) {
       alert("Enter valid postal code!");
     }
     else {
